@@ -49,6 +49,10 @@
       </script>
     </tal:js>
 
+    <script src="fgvalidate.js" type="text/javascript"
+        tal:attributes="src string:$portal_url/++resource++Products.PloneFormGen.resources/fgvalidate.js">
+    </script>
+
     <tal:block define="macro edit_macros/javascript_head | nothing"
                     condition="macro">
       <metal:block use-macro="macro" />

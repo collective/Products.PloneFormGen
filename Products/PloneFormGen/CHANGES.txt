@@ -4,7 +4,9 @@ Change History
 1.7.10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add AJAX validation support.  Very useful when a "Custom Form
+  Action" is used.
+  [rpatterson]
 
 
 1.7.9 (2013-05-29)

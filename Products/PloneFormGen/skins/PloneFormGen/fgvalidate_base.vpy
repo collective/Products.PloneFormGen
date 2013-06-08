@@ -27,7 +27,9 @@ except (ImportError, Unauthorized):
 request = context.REQUEST
 
 errors = state.getErrors()
-errors = context.fgvalidate(REQUEST=request, errors=errors, data=1, metadata=0)
+errors = context.fgvalidate(
+    REQUEST=request, errors=errors, data=1, metadata=0,
+    skip_action_adapters=state.getButton() == 'validate')
 
 if errors:
     if P3StyleErrors:
