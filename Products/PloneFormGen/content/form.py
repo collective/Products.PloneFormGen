@@ -181,6 +181,19 @@ FormFolderSchema = ATFolderSchema.copy() + Schema((
             size=70,
             ),
         ),
+    StringField(
+        'enctype', schemata='overrides',
+        default='multipart/form-data',
+        vocabulary=[('application/x-www-form-urlencoded', 'Form Encoded Data'),
+                    ('multipart/form-data', 'MIME Webform'),
+                    ('text/plain', 'Plain Text')],
+        searchable=0, required=0,
+        write_permission=EDIT_ADVANCED_PERMISSION,
+        languageIndependent=1,
+        widget=StringWidget(label=_(
+            u'label_enctype_text', default=u"Custom Form Content Type"),
+            description=_(u'help_enctype_text', default=u"""
+                Use this field to override the form enctype attribute."""))),
     StringField('formActionOverride',
         schemata='overrides',
         searchable=0,

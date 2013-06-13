@@ -85,7 +85,8 @@
                         enable_auto_focus enable_auto_focus|python:True;"
             tal:attributes="action here/fgGetFormSubmitAction;
                             id string:fg-base-edit;
-                            class python:'fgBaseEditForm '+ test(enable_unload_protection, 'enableUnloadProtection', '') + test(enable_auto_focus, ' enableAutoFocus', '') + test(path('allow_tabbing|nothing'), 'enableFormTabbing', '');">
+                            class python:'fgBaseEditForm '+ test(enable_unload_protection, 'enableUnloadProtection', '') + test(enable_auto_focus, ' enableAutoFocus', '') + test(path('allow_tabbing|nothing'), 'enableFormTabbing', '');
+                            enctype python:context.getEnctype() or 'multipart/form-data';">
 
           <metal:block define-slot="extra_top" />
 

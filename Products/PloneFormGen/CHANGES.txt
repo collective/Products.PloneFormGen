@@ -8,6 +8,10 @@ Change History
   Action" is used.
   [rpatterson]
 
+- Add a field for overriding the form enctype.  Needed for forms that
+  can't handle ``multipart/form-data`` such as SalesForce Web-to-Lead forms.
+  [rpatterson]
+
 
 1.7.9 (2013-05-29)
 ------------------
