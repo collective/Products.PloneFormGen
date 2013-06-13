@@ -64,5 +64,14 @@ the file field is not listed in the mailer's showFields::
     >>> browser.getControl(name='attachment_file').add_file(cStringIO.StringIO('file contents'), 'text/plain', 'test.txt')
     >>> browser.getControl('Submit').click()
     <sent mail from ...to ['mdummy@address.com']>
-    >>> self.portal.MailHost.msg.get_payload(decode=True)
-    '<html xmlns="http://www.w3.org/1999/xhtml">\n\n  <head><title></title></head>\n\n  <body>\n    <p></p>\n    <dl>\n    </dl>\n    <p></p>\n    <pre></pre>\n  </body>\n</html>\n'
+    >>> print self.portal.MailHost.msg.get_payload(decode=True)
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head><title></title></head>
+      <body>
+        <p></p>
+        <dl>
+        </dl>
+        <p></p>
+        <pre></pre>
+      </body>
+    </html>
