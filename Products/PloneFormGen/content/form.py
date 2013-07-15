@@ -190,7 +190,7 @@ FormFolderSchema = ATFolderSchema.copy() + Schema((
         searchable=0, required=0,
         write_permission=EDIT_ADVANCED_PERMISSION,
         languageIndependent=1,
-        widget=StringWidget(label=_(
+        widget=SelectionWidget(label=_(
             u'label_enctype_text', default=u"Custom Form Content Type"),
             description=_(u'help_enctype_text', default=u"""
                 Use this field to override the form enctype attribute."""))),
