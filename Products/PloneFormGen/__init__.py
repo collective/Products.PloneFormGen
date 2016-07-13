@@ -18,7 +18,7 @@ except ImportError:
 
 # Check for Plone versions
 from Products.CMFPlone import __version__
-if __version__ > 4:
+if __version__ < 5:
     raise Exception("This version of PloneFormGen requires Plone >= 5")
 
 
