@@ -35,6 +35,7 @@ setup(name='Products.PloneFormGen',
           'Products.PythonField>=1.1.3',
           'plone.app.jquerytools>=1.2dev',
           'collective.js.jqueryui',
+          'five.formlib',
           # -*- Extra requirements: -*-
       ],
       extras_require={
