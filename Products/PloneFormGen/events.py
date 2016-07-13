@@ -2,7 +2,6 @@ from Acquisition import aq_parent, aq_inner
 from zope.component import adapter
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectMovedEvent
-from Products.CMFPlone.interfaces import IFactoryTool
 
 from Products.PloneFormGen import interfaces
 
@@ -13,9 +12,6 @@ def form_adapter_pasted(form_adapter, event):
        list of active adapters. We only need to do anything if the action
        adapter isn't newly created in the portal_factory.
     """
-    form_adapter = aq_inner(form_adapter)
-    if IFactoryTool.providedBy(aq_parent(aq_parent(form_adapter))):
-        return
 
     form = aq_parent(form_adapter)
     adapters = list(form.actionAdapter)
@@ -36,9 +32,6 @@ def form_adapter_moved(form_adapter, event):
     event.newParent.  One of them could be None.  They may not always
     be forms.
     """
-    form_adapter = aq_inner(form_adapter)
-    if IFactoryTool.providedBy(aq_parent(aq_parent(form_adapter))):
-        return
 
     if not event.oldParent:
         # We cannot know if the adapter was active, so we do nothing.
