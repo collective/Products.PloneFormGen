@@ -17,12 +17,9 @@ except ImportError:
     raise
 
 # Check for Plone versions
-try:
-    from plone.app.upgrade import v41
-    v41  # pyflakes
-except ImportError:
-    logger.error("PloneFormGen requires Plone >= 4.1.")
-    raise
+from Products.CMFPlone import __version__
+if __version__ > 4:
+    raise Exception("This version of PloneFormGen requires Plone >= 5")
 
 
 from Products.Archetypes.public import process_types, listTypes
