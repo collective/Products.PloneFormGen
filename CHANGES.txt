@@ -1,0 +1,91 @@
+Change History
+==============
+
+1.8.2 (unreleased)
+------------------
+
+- Make it work with Plone 5.1
+  Updated version check, removed ancient check for IFactoryTool
+  [agitator]
+
+
+1.8.1 (2016-05-01)
+------------------
+
+- CGI escape field help (description); prevent method call.
+  Eliminates XSS vulnerability that could be exploited by users with the ability
+  to create forms.
+  [smcmahon]
+
+
+1.8.0 (2015-10-01)
+------------------
+
+- Moved our default_page_types setting to the registry.
+  [maurits]
+
+- Get email settings from registry.  Fixes several Plone 5 errors.
+  Do not use ``plone_utils.getSiteEncoding()``, because this is
+  deprecated and always returns ``utf-8``.
+  [maurits]
+
+- Load widget specific css on quickedit form.
+  [maurits]
+
+- Fix embedded view by removing deprecated global defines macro.
+  [buchi]
+
+- Removed inline javascript that tried to block inline validation.  It
+  had no effect anymore on Plone 5, as no inline validation is done
+  here anyway.  And it interferes with themes that load jQuery near
+  the bottom instead of in the head.
+  [maurits]
+
+
+1.8.0b4 (2015-09-09)
+--------------------
+
+- Changed our content types to use TinyMCEWidget instead of
+  RichWidget.  The old one only showed a plain textarea.  Fixes issue
+  #152.
+
+- Fixed ``propertiestool.xml`` to not break importing
+  ``types_not_searched``.
+
+
+1.8.0.beta3 (2015-07-20)
+------------------------
+
+- Show loading on new form OK.
+
+
+1.8.0.beta2 (2015-07-15)
+------------------------
+
+- Doc update.
+
+- travis config fixes.
+
+
+1.8.0.beta1 (2015-07-13)
+------------------------
+
+- Quick Editor working!
+
+- Use bundles architecture and requirejs.
+
+
+1.8.0.alpha1 (2015-06-29)
+-------------------------
+
+- Check commit log for changes related to P5 update.
+
+- 1.8 will target Plone 5. Maintenance branch is 1.7-maintenance.
+
+- Use content-core instead of main macro for templates using the
+  main_template's master macro. Among fitting better in the standard plone
+  environment and prepares for displaying in a full view (some modifications
+  needed).
+  [thet]
+
+For previous changes, see docs/HISTORY.txt.
